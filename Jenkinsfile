@@ -1,9 +1,9 @@
 pipeline {
-  agent any
+  agent { dockerfile true }
   stages {
     stage('Build') {
       steps {
-        echo 'BuildStage'
+        docker 'build -t nginx_image .'
       }
     }
 
