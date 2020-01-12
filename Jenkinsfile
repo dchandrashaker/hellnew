@@ -1,9 +1,10 @@
+node('node1')
 pipeline {
-  agent any
+  agent { dockerfile true }
   stages {
     stage('Build') {
       steps {
-        sh 'echo helo world'
+	docker image build -t bulletinboard:1.0 .
       }
     }
 
