@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-	docker.build '-t bulletinboard:1.0 .'
+	sh 'docker build -t bulletinboard:1.0 .'
       }
     }
 
