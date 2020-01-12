@@ -1,23 +1,11 @@
-pipeline {
-  agent { dockerfile true }
-  stages {
-    stage('Build') {
-      steps {
-        docker 'build -t nginx_image .'
-      }
-    }
-
-    stage('Test') {
-      steps {
-        echo 'TestStage'
-      }
-    }
-
-    stage('Depoy') {
-      steps {
-        echo 'DeployStage'
-      }
-    }
-
-  }
+node('node1'){
+stage('Build') {
+sh '''echo  stage1 steps'''
+}
+stage('Stage') {
+sh '''echo stage2 steps'''
+}
+stage('Deploy') {
+sh '''echo stage3 steps'''
+}
 }
